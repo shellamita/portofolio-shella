@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shella | Web Developer & Software Engineer</title>
+    <meta name="description" content="Portfolio Shella - Web Developer, Software Engineer, Data Analyst.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Playfair Display for Headings (Editorial feel) & Plus Jakarta Sans for Body -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+
+
+</head>
+
+<body class="antialiased selection:bg-olive selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 start-0 bg-[#F5F5F0]/90 backdrop-blur-md border-b border-olive/5 transition-all duration-300"
+        id="navbar">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between p-6">
+            <a href="#home" class="text-2xl font-serif font-bold tracking-tight text-olive relative z-50">
+                Shella<span class="text-accent">.</span>
+            </a>
+
+            <button id="menu-toggle" class="md:hidden text-olive hover:text-accent relative z-50">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Mobile Menu Container -->
+            <div class="fixed inset-0 bg-[#F5F5F0] z-40 flex flex-col items-center justify-center space-y-8 md:static md:bg-transparent md:flex md:flex-row md:space-y-0 md:justify-end md:visible hidden"
+                id="menu">
+                <ul
+                    class="flex flex-col md:flex-row gap-8 md:items-center text-lg md:text-sm font-medium tracking-wide text-center">
+                    <li><a href="#home" class="hover:text-accent transition-colors nav-link">Home</a></li>
+                    <li><a href="#resume" class="hover:text-accent transition-colors nav-link">About & Resume</a></li>
+                    <li>
+                        <a href="#contact"
+                            class="px-6 py-2.5 bg-olive text-white rounded-full hover:bg-accent transition-colors duration-300">
+                            Work With Me
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main id="app-container" class="pt-24 min-h-screen">
+
+        <!-- ================= PAGE: HOME ================= -->
+        <div id="view-home" class="page-view">
+            <!-- Hero Section -->
+            <header class="pt-10 pb-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 reveal active">
+                    <div
+                        class="inline-block px-4 py-1.5 border border-olive/20 rounded-full text-xs font-semibold uppercase tracking-widest text-olive/80">
+                        Open for Opportunities
+                    </div>
+
+                    <h1 class="text-5xl md:text-6xl font-serif font-medium leading-[1.1] text-olive">
+                        Hi, I’m Shella — <br>
+                        <span class="text-accent">Web Developer</span> & <br>
+                        <span class="italic font-light text-gray-400">Software Engineer.</span>
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-olive/70 max-w-lg font-light leading-relaxed ">
+                        I build functional, scalable, and user-centered digital products. Specialized in full-stack
+                        development, UI/UX design, and data-driven solutions.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#projects"
+                            class="px-8 py-4 bg-olive text-white rounded-full hover:bg-accent transition-colors duration-300 font-medium">
+                            View Portfolio
+                        </a>
+                        <a href="#resume"
+                            class="px-8 py-4 border border-olive/20 rounded-full hover:bg-white transition-colors duration-300 text-olive font-medium">
+                            About Me
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual -->
+                <div class="relative h-[500px] w-full reveal active delay-200 hidden md:block">
+                    <div class="absolute inset-0 bg-surface rounded-t-[10rem] rounded-b-[2rem] overflow-hidden">
+                        <div class="absolute inset-0 opacity-20">
+                            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2C3528" stroke-width="0.5" />
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#grid)" />
+                            </svg>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 h-4/5 bg-[#dcdcd9] mx-auto w-4/5 rounded-t-[8rem] flex items-end justify-center overflow-hidden">
+                            <img src="image/shella.jpg" alt="Shella Professional Photo"
+                                class="w-full h-full object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Project Showcase Grid -->
+            <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
+                <div class="flex justify-between items-end mb-16">
+                    <div>
+                        <span class="text-accent font-bold tracking-widest text-xs uppercase mb-2 block">Selected
+                            Works</span>
+                        <h2 class="text-4xl md:text-5xl font-serif text-olive">Featured Projects.</h2>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <!-- 1. Keraton Kasepuhan -->
+                    <a href="#project-keraton" class="group cursor-pointer block">
+                        <div class="h-[300px] bg-surface rounded-[2rem] overflow-hidden relative mb-6">
+                            <div class="absolute inset-0 bg-olive/5 group-hover:bg-olive/0 transition-colors z-10">
+                            </div>
+                            <img src="image/keraton.png" alt="Website Keraton Kasepuhan"
+                                class="w-full h-full object-cover img-zoom">
+                            <div class="absolute bottom-6 left-6 z-20">
+                                <span
+                                    class="bg-white/90 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-olive">Full
+                                    Stack</span>
+                            </div>
+                            <div
+                                class="absolute top-6 right-6 z-20 bg-lime text-olive p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-serif text-olive group-hover:text-accent transition-colors">Website
+                            Keraton Kasepuhan</h3>
+                        <p class="text-olive/60 mt-2 text-sm line-clamp-2">Platform web informatif untuk sejarah dan
+                            warisan budaya.</p>
+                    </a>
+
+                    <!-- 2. SAKAWARSA -->
+                    <a href="#project-sakawarsa" class="group cursor-pointer block">
+                        <div class="h-[300px] bg-surface rounded-[2rem] overflow-hidden relative mb-6">
+                            <div class="absolute inset-0 bg-olive/5 group-hover:bg-olive/0 transition-colors z-10">
+                            </div>
+                            <img src="image/sakawarsa.png" alt="SAKAWARSA App"
+                                class="w-full h-full object-cover img-zoom">
+                            <div class="absolute bottom-6 left-6 z-20">
+                                <span
+                                    class="bg-white/90 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-olive">Full-Stack</span>
+                            </div>
+                            <div
+                                class="absolute top-6 right-6 z-20 bg-lime text-olive p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-serif text-olive group-hover:text-accent transition-colors">SAKAWARSA
+                        </h3>
+                        <p class="text-olive/60 mt-2 text-sm line-clamp-2">Aplikasi Website dan interaktif.</p>
+                    </a>
+
+
+                    <!-- 3. Buku ISBN -->
+                    <a href="#project-books" class="group cursor-pointer block">
+                        <div class="h-[300px] bg-surface rounded-[2rem] overflow-hidden relative mb-6">
+                            <div class="absolute inset-0 bg-olive/5 group-hover:bg-olive/0 transition-colors z-10">
+                            </div>
+                            <img src="image/books.jpg" alt="Buku ISBN" class="w-full h-full object-cover img-zoom">
+                            <div class="absolute bottom-6 left-6 z-20">
+                                <span
+                                    class="bg-white/90 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-olive">Academic
+                                    Writing</span>
+                            </div>
+                            <div
+                                class="absolute top-6 right-6 z-20 bg-lime text-olive p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-serif text-olive group-hover:text-accent transition-colors">Buku Cetak
+                            Ber-ISBN</h3>
+                        <p class="text-olive/60 mt-2 text-sm line-clamp-2 text-justify">Proyek penulisan buku akademik
+                            dan dokumentasi pengetahuan berjudul OBJECT-ORIENTED ANALYSIS & DESIGN (OOAD):
+                            KONSEP, DIAGRAM UML, DAN STUDI KASUS</p>
+                    </a>
+
+                    <!-- 4. Strive UI/UX -->
+                    <a href="#project-strive" class="group cursor-pointer block">
+                        <div class="h-[300px] bg-surface rounded-[2rem] overflow-hidden relative mb-6">
+                            <div class="absolute inset-0 bg-olive/5 group-hover:bg-olive/0 transition-colors z-10">
+                            </div>
+                            <img src="image/aplikasi-strive.png" alt="Strive App UI"
+                                class="w-full h-full object-cover img-zoom">
+                            <div class="absolute bottom-6 left-6 z-20">
+                                <span
+                                    class="bg-white/90 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-olive">UI/UX
+                                    Design</span>
+                            </div>
+                            <div
+                                class="absolute top-6 right-6 z-20 bg-lime text-olive p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-serif text-olive group-hover:text-accent transition-colors">Aplikasi
+                            STRIVE</h3>
+                        <p class="text-olive/60 mt-2 text-sm line-clamp-2">Desain antarmuka aplikasi pencatatan
+                            olahraga.</p>
+                    </a>
+
+                    <!-- 5. Marketplace -->
+                    <a href="#project-marketplace" class="group cursor-pointer block">
+                        <div class="h-[300px] bg-surface rounded-[2rem] overflow-hidden relative mb-6">
+                            <div class="absolute inset-0 bg-olive/5 group-hover:bg-olive/0 transition-colors z-10">
+                            </div>
+                            <img src="images/marketplace.jpg" alt="Marketplace Platform"
+                                class="w-full h-full object-cover img-zoom">
+                            <div class="absolute bottom-6 left-6 z-20">
+                                <span
+                                    class="bg-white/90 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-olive">Product
+                                    Design</span>
+                            </div>
+                            <div
+                                class="absolute top-6 right-6 z-20 bg-lime text-olive p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-serif text-olive group-hover:text-accent transition-colors">Platform
+                            Marketplace Preloved</h3>
+                        <p class="text-olive/60 mt-2 text-sm line-clamp-2">Konsep produk digital dan validasi ide
+                            bisnis.</p>
+                    </a>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= DETAIL PAGES FOR PROJECTS ================= -->
+
+        <!-- 1. KERATON DETAIL -->
+        <div id="view-project-keraton" class="page-view hidden-view">
+            <div class="max-w-4xl mx-auto px-6 pb-24">
+                <a href="#home"
+                    class="inline-flex items-center text-sm font-bold uppercase tracking-wider text-olive/60 hover:text-olive mb-8">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Home
+                </a>
+                <span class="text-accent font-bold tracking-widest text-xs uppercase mb-4 block">Full Stack
+                    Development</span>
+                <h1 class="text-4xl md:text-5xl font-serif text-olive mb-6">Website Keraton Kasepuhan Cirebon</h1>
+                <p class="text-lg text-olive/70 leading-relaxed mb-8 text-justify">
+                    Platform website Keraton Kasepuhan Cirebon ini sebuah platform digital terpadu untuk Keraton
+                    Kasepuhan Cirebon yang menggabungkan layanan pemesanan tiket, penjualan merchandise resmi, dan
+                    penyajian informasi museum dalam satu sistem. Proyek ini berfokus pada peningkatan pengalaman wisata
+                    dan efisiensi pengelolaan operasional berbasis data.
+                </p>
+                <div
+                    class="w-full h-[300px] bg-[#E0E0DB] rounded-[2rem] mb-12 flex items-center justify-center border border-olive/5">
+                    <img src="image/keraton.png" alt="Keraton Website Interface"
+                        class="w-full h-full object-cover rounded-[2rem]">
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 mb-12 border-y border-olive/10 py-8">
+                    <div>
+                        <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Role</h4>
+                        <p class="text-olive/70">Web Developer & UI/UX Designer</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Tech Stack</h4>
+                        <p class="text-olive/70">Laravel,Figma</p>
+                    </div>
+                </div>
+                <div class="space-y-4 text-olive/80 leading-relaxed">
+                    <h3 class="font-serif text-2xl text-olive">Key Contributions</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Merancang struktur informasi dan navigasi berbasis pola pencarian pengguna.</li>
+                        <li>Mendesain antarmuka dengan elemen visual budaya Cirebon (wayang, Mega Mendung).</li>
+                        <li>Menyusun konten sejarah dan informasi wisata dengan format terstandar.</li>
+                        <li>Membuat sistem halaman dinamis untuk profil, galeri, agenda, dan artikel budaya.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. SAKAWARSA DETAIL -->
+        <div id="view-project-sakawarsa" class="page-view hidden-view">
+            <div class="max-w-4xl mx-auto px-6 pb-24">
+                <a href="#home"
+                    class="inline-flex items-center text-sm font-bold uppercase tracking-wider text-olive/60 hover:text-olive mb-8">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Home
+                </a>
+                <span class="text-accent font-bold tracking-widest text-xs uppercase mb-4 block">Full-Stack
+                    Development</span>
+                <h1 class="text-4xl md:text-5xl font-serif text-olive mb-6">SAKAWARSA – Platform Digital Budaya dan
+                    Keraton Cirebon</h1>
+                <p class="text-lg text-olive/70 leading-relaxed mb-8 text-justify">
+                    Sakawarsa adalah platform digital yang dirancang untuk memperkenalkan budaya Cirebon melalui
+                    eksplorasi keraton,pemesanan tiket wisata budaya, forum diskusi komunitas, serta katalog merchandise
+                    khas daerah. Proyek ini
+                    mengintegrasikan informasi sejarah, pengalaman wisata, dan partisipasi komunitas dalam satu sistem
+                    yang modern dan mudah
+                    diakses.
+                </p>
+                <div
+                    class="w-full h-[300px] bg-[#E0E0DB] rounded-[2rem] mb-12 flex items-center justify-center border border-olive/5">
+                    <img src="image/sakawarsa.png" alt="Sakawarsa App Interface"
+                        class="w-full h-full object-cover rounded-[2rem]">
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 mb-12 border-y border-olive/10 py-8">
+                    <div>
+                        <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Role</h4>
+                        <p class="text-olive/70">Full-Stack Developer & Content Architect</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Tech Stack</h4>
+                        <p class="text-olive/70">Bisnis Model Canvas, Laravel, Figma, UML</p>
+                    </div>
+                </div>
+                <div class="space-y-4 text-olive/80 leading-relaxed">
+                    <h3 class="font-serif text-2xl text-olive">Key Contributions</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Merancang arsitektur aplikasi berbasis Laravel.</li>
+                        <li>Mengembangkan alur cerita digital yang terstruktur dan mudah diikuti.</li>
+                        <li>Mendesain antarmuka dengan pendekatan user-centered design.</li>
+                        <li>Melakukan validasi kebutuhan melalui studi dokumentasi dan observasi pengguna.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 3. BOOKS DETAIL -->
+        <div id="view-project-books" class="page-view hidden-view">
+            <div class="max-w-4xl mx-auto px-6 pb-24">
+                <a href="#home"
+                    class="inline-flex items-center text-sm font-bold uppercase tracking-wider text-olive/60 hover:text-olive mb-8">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Home
+                </a>
+                <span class="text-accent font-bold tracking-widest text-xs uppercase mb-4 block">Academic Writing</span>
+                <h1 class="text-4xl md:text-5xl font-serif text-olive mb-6">Buku Cetak Ber-ISBN: OBJECT-ORIENTED
+                    ANALYSIS & DESIGN (OOAD)</h1>
+                <p class="text-lg text-olive/70 leading-relaxed mb-8 text-justify">
+                    Proyek penulisan buku akademik dan dokumentasi pengetahuan berjudul OBJECT-ORIENTED ANALYSIS &
+                    DESIGN (OOAD): KONSEP, DIAGRAM UML, DAN STUDI KASUS. Buku ini menyajikan konsep dasar, diagram UML,
+                    serta studi kasus penerapan OOAD dalam pengembangan perangkat lunak.
+                </p>
+                <div
+                    class="w-full h-[300px] bg-[#E0E0DB] rounded-[2rem] mb-12 flex items-center justify-center border border-olive/5">
+                    <img src="images/books.jpg" alt="Books Concept Art"
+                        class="w-full h-full object-cover rounded-[2rem]">
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 mb-12 border-y border-olive/10 py-8">
+                    <div>
+                        <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Role</h4>
+                        <p class="text-olive/70">Author & Researcher</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Tools</h4>
+                        <p class="text-olive
+/70">Microsoft Word, Google Scholar</p>
+                    </div>
+                </div>
+                <div class="space-y-4 text-olive/80 leading-relaxed">
+                    <h3 class="font-serif text-2xl text-olive">Key Contributions</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Melakukan riset literatur mendalam tentang konsep OOAD dan diagram UML.</li>
+                        <li>Menyusun materi pembelajaran yang sistematis dan mudah dipahami.</li>
+                        <li>Menyajikan studi kasus praktis untuk mengilustrasikan penerapan konsep.</li>
+                        <li>Berkoordinasi dengan penerbit untuk proses penerbitan dan distribusi buku.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 4. STRIVE DETAIL -->
+        <div id="view-project-strive" class="page-view hidden-view">
+            <div class="max-w-4xl mx-auto px-6 pb-24">
+                <a href="#home"
+                    class="inline-flex items-center text-sm font-bold uppercase tracking-wider text-olive/60 hover:text-olive mb-8">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Home
+                </a>
+                <span class="text-accent font-bold tracking-widest text-xs uppercase mb-4 block">UI/UX Design</span>
+                <h1 class="text-4xl md:text-5xl font-serif text-olive mb-6">Aplikasi STRIVE</h1>
+                <p class="text-lg text-olive/70 leading-relaxed mb-8">
+                    Desain antarmuka aplikasi mobile STRIVE, sebuah platform pencatatan dan pelacakan aktivitas olahraga
+                    harian. Aplikasi ini dirancang untuk membantu pengguna memantau kemajuan latihan, menetapkan tujuan
+                    kebugaran, dan tetap termotivasi melalui fitur-fitur interaktif dan visual yang menarik.
+                </p>
+                <div
+                    class="w-full h-[300px] bg-[#E0E0DB] rounded-[2rem] mb-12 flex items-center justify-center border border-olive/5">
+                    <img src="image/aplikasi-strive.png" alt="Strive App UI"
+                        class="w-full h-full object-cover rounded-[2rem]">
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 mb-12 border-y
+    border-olive/10 py-8">
+                    <div>
+                        <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Role</h4>
+                        <p class="text-olive    /70">UI/UX Designer</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Tools</h4>
+                        <p class="text-olive/70">Figma, User Flow, Wireframing</p>
+                    </div>
+                </div>
+                <div class="space-y-4 text-olive/80 leading-relaxed">
+                    <h3 class="font-serif text-2xl text-olive">Key Contributions</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Mengembangkan wireframe dan prototipe interaktif untuk aplikasi mobile.</li <li>Mendesain
+                        antarmuka yang intuitif dengan fokus pada pengalaman pengguna.</li>
+                        <li>Melakukan pengujian kegunaan untuk mengidentifikasi area perbaikan.</li>
+                        <li>Mengintegrasikan umpan balik pengguna untuk iterasi desain yang lebih baik.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- 5. MARKETPLACE DETAIL -->
+        <div id="view-project-marketplace" class="page-view hidden-view">
+            <div class="max-w-4xl mx-auto px-6 pb-24">
+                <a href="#home"
+                    class="inline-flex items-center text-sm font-bold uppercase tracking-wider text-olive/60 hover:text-olive mb-8">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Home
+                </a>
+                <span class="text-accent font-bold tracking-widest text-xs uppercase mb-4 block">Product Design</span>
+                <h1 class="text-4xl md:text-5xl font-serif text-olive mb-6">Platform Marketplace Preloved</h1>
+                <p class="text-lg text-olive/70 leading-relaxed mb-8">
+                    Prototype platform marketplace yang mengintegrasikan toko-toko preloved dalam satu ekosistem.
+                </p>
+                <div
+                    class="w-full h-[300px] bg-[#E0E0DB] rounded-[2rem] mb-12 flex items-center justify-center border border-olive/5">
+                    <img src="images/marketplace.jpg" alt="Marketplace Concept Art"
+                        class="w-full h-full object-cover rounded-[2rem]">
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 mb-12 border-y border-olive/10 py-8">
+                    <div>
+                        <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Role</h4>
+                        <p class="text-olive/70">Product Designer</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Tools</h4>
+                        <p class="text-olive/70">Figma, Business Model Canvas</p>
+                    </div>
+                </div>
+                <div class="space-y-4 text-olive/80 leading-relaxed">
+                    <h3 class="font-serif text-2xl text-olive">Key Contributions</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-justify">
+                        <li>Menyusun konsep bisnis dan problem statement.</li>
+                        <li>Mengembangkan alur pengguna dan requirement fitur.</li>
+                        <li>Membuat prototype awal untuk pengujian konsep.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE: RESUME / ABOUT FULL ================= -->
+        <div id="view-resume" class="page-view hidden-view">
+            <div class="max-w-5xl mx-auto px-6 pb-24">
+                <a href="#home"
+                    class="inline-flex items-center text-sm font-bold uppercase tracking-wider text-olive/60 hover:text-olive mb-8">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Home
+                </a>
+
+                <div class="grid md:grid-cols-12 gap-12">
+                    <!-- Sidebar Info (Left) -->
+                    <div class="md:col-span-4 space-y-10">
+                        <!-- Profile Image -->
+                        <div
+                            class="w-32 h-32 bg-[#E0E0DB] rounded-full mb-6 flex items-center justify-center border border-olive/30">
+                            <img src="image/shella.jpg" alt="Shella Profile Photo"
+                                class="w-full h-full object-cover rounded-full">
+                        </div>
+
+                        <!-- UPDATE: Download Resume Button with Alert Logic -->
+                        <div>
+                            <a href="shella_cv.pdf" onclick="handleDownload(event)"
+                                class="flex w-full items-center justify-center gap-2 px-6 py-3 bg-olive text-white font-bold rounded-xl hover:bg-accent transition-all text-sm shadow-lg hover:shadow-xl">
+                                <i data-lucide="download" class="w-4 h-4"></i> Download CV
+                            </a>
+                        </div>
+
+                        <div>
+                            <h4
+                                class="font-bold text-olive uppercase text-xs tracking-wider mb-4 border-b border-olive/10 pb-2">
+                                System Modeling</h4>
+                            <div class="space-y-2 text-sm text-olive/70">
+                                <p>• Flowmap & DFD</p>
+                                <p>• Entity Relationship Diagram (ERD)</p>
+                                <p>• UML (Use Case, Activity, Sequence, Class)</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4
+                                class="font-bold text-olive uppercase text-xs tracking-wider mb-4 border-b border-olive/10 pb-2">
+                                Technical Skills</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <span class="text-xs font-bold text-accent block mb-1">Front-End</span>
+                                    <p class="text-sm text-olive/70">HTML, CSS, JavaScript, TailwindCSS, Bootstrap</p>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-bold text-accent block mb-1">Back-End</span>
+                                    <p class="text-sm text-olive/70">Laravel, Python (Flask), PHP, MySQL</p>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-bold text-accent block mb-1">Data & Tools</span>
+                                    <p class="text-sm text-olive/70">Enterprise Architect, Figma, Git/GitHub, VS Code</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4
+                                class="font-bold text-olive uppercase text-xs tracking-wider mb-4 border-b border-olive/10 pb-2">
+                                Education</h4>
+                            <p class="font-bold text-olive text-sm">S1 Sistem Informasi</p>
+                            <p class="text-xs text-olive/70 mb-1">Universitas Catur Insan Cendekia</p>
+                            <p class="text-xs text-olive/50">2023 - Present</p>
+                        </div>
+                    </div>
+
+                    <!-- Main Content (Right) -->
+                    <div class="md:col-span-8 space-y-12">
+                        <!-- About Statement -->
+                        <section>
+                            <h2 class="text-4xl font-serif text-olive mb-6">About Me</h2>
+                            <p class="text-olive/80 leading-relaxed mb-4 text-justify">
+                                Saya adalah seorang <strong>Web Developer dan Software Engineer</strong> yang berfokus
+                                pada pengembangan aplikasi berbasis web dengan pendekatan fungsional, terukur, dan
+                                berorientasi pada pengalaman pengguna. Saat ini saya menempuh studi di Program Sistem
+                                Informasi dan secara aktif mengerjakan berbagai proyek yang berkaitan dengan
+                                pengembangan front-end, back-end, UI/UX, serta data analytics.
+                            </p>
+                            <p class="text-olive/80 leading-relaxed text-justify">
+                                Minat utama saya berada pada pengembangan aplikasi modern, integrasi API, arsitektur
+                                sistem, serta perancangan antarmuka yang sederhana tetapi efektif. Saya berkomitmen
+                                untuk menghasilkan produk digital yang memberikan nilai tambah nyata bagi pengguna dan
+                                organisasi.
+                            </p>
+                        </section>
+
+                        <!-- Experience -->
+                        <section>
+                            <h3 class="text-2xl font-serif text-olive mb-6 flex items-center gap-3">
+                                Work Experience
+                                <div class="h-px bg-olive/10 flex-1"></div>
+                            </h3>
+
+                            <div class="space-y-8">
+                                <div class="relative pl-8 border-l border-olive/10">
+                                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-accent"></div>
+                                    <h4 class="font-bold text-olive text-lg">Web Developer – Independent Project</h4>
+                                    <p class="text-xs text-olive/50 mb-2 font-mono">2023 – Sekarang</p>
+                                    <p class="text-sm text-olive/70 leading-relaxed text-justify">
+                                        Mengembangkan beragam aplikasi berbasis web, mulai dari sistem informasi,
+                                        landing page, hingga aplikasi full-stack. Berperan dalam seluruh siklus
+                                        pengembangan: riset, desain, development, testing, hingga deployment.
+                                        Berpengalaman menggunakan Laravel, Python, JavaScript, serta framework UI
+                                        modern. dan sekarang sedang belajar membuat aplikasi mobile menggunakan frame
+                                        work Flutter.
+                                    </p>
+                                </div>
+
+                                <div class="relative pl-8 border-l border-olive/10">
+                                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-olive/20"></div>
+                                    <h4 class="font-bold text-olive text-lg">UI/UX Designer – Academic & Freelance</h4>
+                                    <p class="text-xs text-olive/50 mb-2 font-mono">2024 – Sekarang</p>
+                                    <p class="text-sm text-olive/70 leading-relaxed  text-justify">
+                                        Mendesain pengalaman pengguna dan antarmuka aplikasi berbasis mobile dan
+                                        website. Menghasilkan wireframe, user flow, dan high-fidelity design menggunakan
+                                        pendekatan problem-solving.
+                                    </p>
+                                </div>
+
+                                <div class="relative pl-8 border-l border-olive/10">
+                                    <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-olive/20"></div>
+                                    <h4 class="font-bold text-olive text-lg">Data Analyst – Academic Project</h4>
+                                    <p class="text-xs text-olive/50 mb-2 font-mono">2025</p>
+                                    <p class="text-sm text-olive/70 leading-relaxed  text-justify">
+                                        Melakukan analisis dataset Netflix menggunakan Power BI: data cleaning, data
+                                        modeling, pembuatan dashboard visual, serta penyusunan insight untuk mendukung
+                                        pengambilan keputusan.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-olive text-cream pt-24 pb-12 rounded-t-[3rem] -mt-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-6xl font-serif mb-6">Let’s Work Together.</h2>
+            <p class="text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed  text-justify">
+                Saya terbuka untuk peluang kerja, kolaborasi proyek, magang, maupun permintaan kerja sama lainnya. Jika
+                Anda membutuhkan developer yang disiplin, cepat belajar, serta mampu mengerjakan proyek secara
+                end-to-end, saya siap membantu.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 mb-16 flex-wrap">
+                <a href="mailto:shellamita45@gmail.com"
+                    class="px-8 py-4 bg-lime text-olive font-bold rounded-full hover:bg-white transition-colors">
+                    Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/shella-mita-a5a318244/"
+                    class="px-8 py-4 border border-white/20 rounded-full hover:bg-white/10 transition-colors">
+                    LinkedIn Profile
+                </a>
+                <!-- GitHub 1 (Main/Personal) -->
+                <a href="https://github.com/shellamita" target="_blank"
+                    class="px-8 py-4 border border-white/20 rounded-full hover:bg-white/10 transition-colors">
+                    GitHub (Personal)
+                </a>
+                <!-- GitHub 2 (Academic/Commits) -->
+                <a href="https://github.com/shellamitasi23-commits" target="_blank"
+                    class="px-8 py-4 border border-white/20 rounded-full hover:bg-white/10 transition-colors">
+                    GitHub (Academic)
+                </a>
+            </div>
+
+            <div
+                class="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
+                <p>&copy; 2025 Shella. Professional Portfolio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
