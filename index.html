@@ -13,17 +13,102 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Playfair Display for Headings (Editorial feel) & Plus Jakarta Sans for Body -->
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <style>
+        :root {
+            --olive: #2C3528;
+            --lime: #C5D86D;
+            --accent: #8B9556;
+            --cream: #F5F5F0;
+            --surface: #E0E0DB;
+        }
 
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--olive);
+        }
 
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+        }
 
+        .text-olive {
+            color: var(--olive);
+        }
+
+        .text-lime {
+            color: var(--lime);
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .text-cream {
+            color: var(--cream);
+        }
+
+        .bg-olive {
+            background-color: var(--olive);
+        }
+
+        .bg-lime {
+            background-color: var(--lime);
+        }
+
+        .bg-accent {
+            background-color: var(--accent);
+        }
+
+        .bg-surface {
+            background-color: var(--surface);
+        }
+
+        .border-olive {
+            border-color: var(--olive);
+        }
+
+        .page-view {
+            display: block;
+        }
+
+        .hidden-view {
+            display: none;
+        }
+
+        .img-zoom {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .group:hover .img-zoom {
+            transform: scale(1.05);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+    </style>
 </head>
 
 <body class="antialiased selection:bg-olive selection:text-white">
@@ -40,7 +125,6 @@
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
 
-            <!-- Mobile Menu Container -->
             <div class="fixed inset-0 bg-[#F5F5F0] z-40 flex flex-col items-center justify-center space-y-8 md:static md:bg-transparent md:flex md:flex-row md:space-y-0 md:justify-end md:visible hidden"
                 id="menu">
                 <ul
@@ -72,12 +156,12 @@
                     </div>
 
                     <h1 class="text-5xl md:text-6xl font-serif font-medium leading-[1.1] text-olive">
-                        Hi, I’m Shella — <br>
+                        Hi, I'm Shella — <br>
                         <span class="text-accent">Web Developer</span> & <br>
                         <span class="italic font-light text-gray-400">Software Engineer.</span>
                     </h1>
 
-                    <p class="text-lg md:text-xl text-olive/70 max-w-lg font-light leading-relaxed ">
+                    <p class="text-lg md:text-xl text-olive/70 max-w-lg font-light leading-relaxed">
                         I build functional, scalable, and user-centered digital products. Specialized in full-stack
                         development, UI/UX design, and data-driven solutions.
                     </p>
@@ -171,8 +255,29 @@
                         <p class="text-olive/60 mt-2 text-sm line-clamp-2">Aplikasi Website dan interaktif.</p>
                     </a>
 
+                    <!-- 3. POSYANDU (NEW) -->
+                    <a href="#project-posyandu" class="group cursor-pointer block">
+                        <div class="h-[300px] bg-surface rounded-[2rem] overflow-hidden relative mb-6">
+                            <div class="absolute inset-0 bg-olive/5 group-hover:bg-olive/0 transition-colors z-10">
+                            </div>
+                            <img src="image/posyandu.png" alt="Aplikasi Posyandu"
+                                class="w-full h-full object-cover img-zoom">
+                            <div class="absolute bottom-6 left-6 z-20">
+                                <span
+                                    class="bg-white/90 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-olive">Research-Based</span>
+                            </div>
+                            <div
+                                class="absolute top-6 right-6 z-20 bg-lime text-olive p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-serif text-olive group-hover:text-accent transition-colors">Aplikasi
+                            Posyandu Digital</h3>
+                        <p class="text-olive/60 mt-2 text-sm line-clamp-2">Sistem manajemen posyandu berbasis riset
+                            lapangan di Desa Pangarengan.</p>
+                    </a>
 
-                    <!-- 3. Buku ISBN -->
+                    <!-- 4. Buku ISBN -->
                     <a href="#project-books" class="group cursor-pointer block">
                         <div class="h-[300px] bg-surface rounded-[2rem] overflow-hidden relative mb-6">
                             <div class="absolute inset-0 bg-olive/5 group-hover:bg-olive/0 transition-colors z-10">
@@ -191,11 +296,10 @@
                         <h3 class="text-2xl font-serif text-olive group-hover:text-accent transition-colors">Buku Cetak
                             Ber-ISBN</h3>
                         <p class="text-olive/60 mt-2 text-sm line-clamp-2 text-justify">Proyek penulisan buku akademik
-                            dan dokumentasi pengetahuan berjudul OBJECT-ORIENTED ANALYSIS & DESIGN (OOAD):
-                            KONSEP, DIAGRAM UML, DAN STUDI KASUS</p>
+                            dan dokumentasi pengetahuan berjudul OBJECT-ORIENTED ANALYSIS & DESIGN (OOAD)</p>
                     </a>
 
-                    <!-- 4. Strive UI/UX -->
+                    <!-- 5. Strive UI/UX -->
                     <a href="#project-strive" class="group cursor-pointer block">
                         <div class="h-[300px] bg-surface rounded-[2rem] overflow-hidden relative mb-6">
                             <div class="absolute inset-0 bg-olive/5 group-hover:bg-olive/0 transition-colors z-10">
@@ -218,7 +322,7 @@
                             olahraga.</p>
                     </a>
 
-                    <!-- 5. Marketplace -->
+                    <!-- 6. Marketplace -->
                     <a href="#project-marketplace" class="group cursor-pointer block">
                         <div class="h-[300px] bg-surface rounded-[2rem] overflow-hidden relative mb-6">
                             <div class="absolute inset-0 bg-olive/5 group-hover:bg-olive/0 transition-colors z-10">
@@ -240,7 +344,6 @@
                         <p class="text-olive/60 mt-2 text-sm line-clamp-2">Konsep produk digital dan validasi ide
                             bisnis.</p>
                     </a>
-
                 </div>
             </section>
         </div>
@@ -275,7 +378,7 @@
                     </div>
                     <div>
                         <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Tech Stack</h4>
-                        <p class="text-olive/70">Laravel,Figma</p>
+                        <p class="text-olive/70">Laravel, Figma</p>
                     </div>
                 </div>
                 <div class="space-y-4 text-olive/80 leading-relaxed">
@@ -303,11 +406,9 @@
                     Keraton Cirebon</h1>
                 <p class="text-lg text-olive/70 leading-relaxed mb-8 text-justify">
                     Sakawarsa adalah platform digital yang dirancang untuk memperkenalkan budaya Cirebon melalui
-                    eksplorasi keraton,pemesanan tiket wisata budaya, forum diskusi komunitas, serta katalog merchandise
-                    khas daerah. Proyek ini
-                    mengintegrasikan informasi sejarah, pengalaman wisata, dan partisipasi komunitas dalam satu sistem
-                    yang modern dan mudah
-                    diakses.
+                    eksplorasi keraton, pemesanan tiket wisata budaya, forum diskusi komunitas, serta katalog
+                    merchandise khas daerah. Proyek ini mengintegrasikan informasi sejarah, pengalaman wisata, dan
+                    partisipasi komunitas dalam satu sistem yang modern dan mudah diakses.
                 </p>
                 <div
                     class="w-full h-[300px] bg-[#E0E0DB] rounded-[2rem] mb-12 flex items-center justify-center border border-olive/5">
@@ -335,7 +436,218 @@
                 </div>
             </div>
         </div>
-        <!-- 3. BOOKS DETAIL -->
+
+        <!-- 3. POSYANDU DETAIL (NEW) -->
+        <div id="view-project-posyandu" class="page-view hidden-view">
+            <div class="max-w-4xl mx-auto px-6 pb-24">
+                <a href="#home"
+                    class="inline-flex items-center text-sm font-bold uppercase tracking-wider text-olive/60 hover:text-olive mb-8">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Home
+                </a>
+                <span class="text-accent font-bold tracking-widest text-xs uppercase mb-4 block">Research-Based
+                    Development</span>
+                <h1 class="text-4xl md:text-5xl font-serif text-olive mb-6">Aplikasi Posyandu Digital – Desa Pangarengan
+                </h1>
+                <p class="text-lg text-olive/70 leading-relaxed mb-8 text-justify">
+                    Aplikasi Posyandu Digital adalah sistem informasi manajemen kesehatan ibu dan anak yang dikembangkan
+                    berdasarkan penelitian lapangan di Desa Pangarengan, Kabupaten Cirebon. Proyek ini dirancang untuk
+                    meningkatkan efisiensi pencatatan data kesehatan, monitoring pertumbuhan balita, jadwal imunisasi,
+                    dan koordinasi antara kader posyandu dengan tenaga kesehatan.
+                </p>
+                <div
+                    class="w-full h-[300px] bg-[#E0E0DB] rounded-[2rem] mb-12 flex items-center justify-center border border-olive/5">
+                    <img src="image/posyandu.png" alt="Aplikasi Posyandu Interface"
+                        class="w-full h-full object-cover rounded-[2rem]">
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 mb-12 border-y border-olive/10 py-8">
+                    <div>
+                        <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Role</h4>
+                        <p class="text-olive/70">Full-Stack Developer & UX Researcher</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Tech Stack</h4>
+                        <p class="text-olive/70">Laravel, MySQL, Figma, Miro, Javelin Board</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6 text-olive/80 leading-relaxed">
+                    <h3 class="font-serif text-2xl text-olive">Research & Development Methodology</h3>
+                    <p class="text-justify">
+                        Proyek ini menggunakan pendekatan <strong>Design Thinking</strong> dengan tahapan riset yang
+                        terstruktur untuk memastikan solusi yang dibangun benar-benar sesuai dengan kebutuhan pengguna
+                        di lapangan.
+                    </p>
+
+                    <div class="bg-surface/50 p-6 rounded-2xl space-y-4">
+                        <h4 class="font-bold text-olive text-lg flex items-center gap-2">
+                            <span
+                                class="bg-accent text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
+                            Penelitian Lapangan
+                        </h4>
+                        <p class="pl-10 text-justify">
+                            Melakukan observasi dan wawancara mendalam dengan kader posyandu, bidan desa, dan orang tua
+                            balita di Desa Pangarengan untuk mengidentifikasi <em>pain points</em> dalam sistem
+                            pencatatan manual yang masih berjalan.
+                        </p>
+                        <ul class="pl-10 list-disc space-y-1 text-sm">
+                            <li>Wawancara dengan 5 kader posyandu aktif</li>
+                            <li>Observasi proses pencatatan data manual selama 2 minggu</li>
+                            <li>Analisis kendala koordinasi antara kader dan tenaga kesehatan</li>
+                            <li>Dokumentasi workflow existing system</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-surface/50 p-6 rounded-2xl space-y-4">
+                        <h4 class="font-bold text-olive text-lg flex items-center gap-2">
+                            <span
+                                class="bg-accent text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
+                            Javelin Board (Problem Validation)
+                        </h4>
+                        <p class="pl-10 text-justify">
+                            Menyusun Javelin Board untuk memvalidasi asumsi masalah dan solusi. Framework ini membantu
+                            mengidentifikasi risiko tertinggi dalam pengembangan produk dan memprioritaskan validasi
+                            sebelum coding.
+                        </p>
+                        <ul class="pl-10 list-disc space-y-1 text-sm">
+                            <li><strong>Customer Problem:</strong> Kesulitan tracking data balita secara konsisten</li>
+                            <li><strong>Solution:</strong> Sistem digital terintegrasi dengan reminder otomatis</li>
+                            <li><strong>Riskiest Assumption:</strong> Kader posyandu memiliki akses smartphone</li>
+                            <li><strong>Validation Method:</strong> Survey kepemilikan perangkat & tingkat literasi
+                                digital</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-surface/50 p-6 rounded-2xl space-y-4">
+                        <h4 class="font-bold text-olive text-lg flex items-center gap-2">
+                            <span
+                                class="bg-accent text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">3</span>
+                            Feature Mapping di Miro
+                        </h4>
+                        <p class="pl-10 text-justify">
+                            Menggunakan Miro Board untuk brainstorming dan memetakan seluruh fitur aplikasi berdasarkan
+                            user journey dari kader posyandu, orang tua, dan tenaga kesehatan.
+                        </p>
+                        <div class="pl-10 grid md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <h5 class="font-bold text-accent mb-2">Fitur Utama:</h5>
+                                <ul class="list-disc pl-4 space-y-1">
+                                    <li>Dashboard monitoring balita</li>
+                                    <li>Input & update data pertumbuhan</li>
+                                    <li>Jadwal imunisasi otomatis</li>
+                                    <li>Grafik tumbuh kembang (KMS digital)</li>
+                                    <li>Notifikasi reminder</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-accent mb-2">Fitur Pendukung:</h5>
+                                <ul class="list-disc pl-4 space-y-1">
+                                    <li>Laporan bulanan otomatis</li>
+                                    <li>Export data ke Excel/PDF</li>
+                                    <li>Role management (kader/bidan/admin)</li>
+                                    <li>Artikel kesehatan ibu & anak</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-surface/50 p-6 rounded-2xl space-y-4">
+                        <h4 class="font-bold text-olive text-lg flex items-center gap-2">
+                            <span
+                                class="bg-accent text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">4</span>
+                            Wireframe & Prototype (Figma)
+                        </h4>
+                        <p class="pl-10 text-justify">
+                            Membuat wireframe low-fidelity untuk validasi alur pengguna, dilanjutkan dengan
+                            high-fidelity prototype untuk user testing dengan kader posyandu sebelum development.
+                        </p>
+                        <ul class="pl-10 list-disc space-y-1 text-sm">
+                            <li>Low-fidelity wireframe untuk 12 screen utama</li>
+                            <li>High-fidelity prototype dengan branding warna kesehatan (hijau & biru)</li>
+                            <li>Usability testing dengan 3 kader posyandu</li>
+                            <li>Iterasi desain berdasarkan feedback lapangan</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-surface/50 p-6 rounded-2xl space-y-4">
+                        <h4 class="font-bold text-olive text-lg flex items-center gap-2">
+                            <span
+                                class="bg-accent text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">5</span>
+                            Development & Implementation
+                        </h4>
+                        <p class="pl-10 text-justify">
+                            Mengembangkan aplikasi berbasis web menggunakan Laravel dengan database MySQL. Sistem
+                            dirancang mobile-responsive untuk aksesibilitas maksimal dari smartphone kader.
+                        </p>
+                        <ul class="pl-10 list-disc space-y-1 text-sm">
+                            <li>Backend API dengan Laravel 10</li>
+                            <li>Frontend dengan Blade Template & TailwindCSS</li>
+                            <li>Database normalisasi untuk efisiensi penyimpanan</li>
+                            <li>Implementasi Chart.js untuk visualisasi data tumbuh kembang</li>
+                            <li>Sistem notifikasi berbasis cron job</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-surface/50 p-6 rounded-2xl space-y-4">
+                        <h4 class="font-bold text-olive text-lg flex items-center gap-2">
+                            <span
+                                class="bg-accent text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">6</span>
+                            Hosting & Deployment
+                        </h4>
+                        <p class="pl-10 text-justify">
+                            Melakukan deployment ke hosting dengan domain khusus untuk akses yang mudah diingat oleh
+                            pengguna di desa.
+                        </p>
+                        <ul class="pl-10 list-disc space-y-1 text-sm">
+                            <li>Hosting di shared hosting dengan cPanel</li>
+                            <li>Setup domain: posyandu-pangarengan.com (contoh)</li>
+                            <li>SSL certificate untuk keamanan data</li>
+                            <li>Regular backup database mingguan</li>
+                            <li>Training untuk kader dalam penggunaan sistem</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="font-serif text-2xl text-olive pt-6">Key Contributions</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Melakukan riset lapangan dan analisis kebutuhan berbasis Design Thinking</li>
+                        <li>Merancang product roadmap dengan Javelin Board untuk validasi risiko</li>
+                        <li>Memfasilitasi sesi brainstorming fitur menggunakan Miro Board</li>
+                        <li>Mendesain user interface yang sederhana dan mudah digunakan untuk pengguna dengan literasi
+                            digital terbatas</li>
+                        <li>Mengembangkan full-stack application dari nol hingga deployment</li>
+                        <li>Melakukan user acceptance testing (UAT) bersama stakeholder</li>
+                        <li>Memberikan training dan dokumentasi penggunaan sistem</li>
+                    </ul>
+
+                    <h3 class="font-serif text-2xl text-olive pt-6">Impact & Results</h3>
+                    <div class="bg-lime/10 border border-lime/30 p-6 rounded-2xl">
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-0.5"></i>
+                                <span><strong>Efisiensi waktu pencatatan meningkat 60%</strong> — dari manual ke
+                                    digital</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-0.5"></i>
+                                <span><strong>Akurasi data meningkat</strong> karena validasi otomatis dan mengurangi
+                                    human error</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-0.5"></i>
+                                <span><strong>Koordinasi lebih baik</strong> antara kader dan tenaga kesehatan melalui
+                                    sistem terpusat</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-0.5"></i>
+                                <span><strong>Reminder otomatis</strong> meningkatkan kehadiran imunisasi balita hingga
+                                    35%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. BOOKS DETAIL -->
         <div id="view-project-books" class="page-view hidden-view">
             <div class="max-w-4xl mx-auto px-6 pb-24">
                 <a href="#home"
@@ -352,7 +664,7 @@
                 </p>
                 <div
                     class="w-full h-[300px] bg-[#E0E0DB] rounded-[2rem] mb-12 flex items-center justify-center border border-olive/5">
-                    <img src="images/books.jpg" alt="Books Concept Art"
+                    <img src="image/books.jpg" alt="Books Concept Art"
                         class="w-full h-full object-cover rounded-[2rem]">
                 </div>
                 <div class="grid md:grid-cols-2 gap-8 mb-12 border-y border-olive/10 py-8">
@@ -362,8 +674,7 @@
                     </div>
                     <div>
                         <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Tools</h4>
-                        <p class="text-olive
-/70">Microsoft Word, Google Scholar</p>
+                        <p class="text-olive/70">Microsoft Word, Google Scholar</p>
                     </div>
                 </div>
                 <div class="space-y-4 text-olive/80 leading-relaxed">
@@ -377,7 +688,8 @@
                 </div>
             </div>
         </div>
-        <!-- 4. STRIVE DETAIL -->
+
+        <!-- 5. STRIVE DETAIL -->
         <div id="view-project-strive" class="page-view hidden-view">
             <div class="max-w-4xl mx-auto px-6 pb-24">
                 <a href="#home"
@@ -396,11 +708,10 @@
                     <img src="image/aplikasi-strive.png" alt="Strive App UI"
                         class="w-full h-full object-cover rounded-[2rem]">
                 </div>
-                <div class="grid md:grid-cols-2 gap-8 mb-12 border-y
-    border-olive/10 py-8">
+                <div class="grid md:grid-cols-2 gap-8 mb-12 border-y border-olive/10 py-8">
                     <div>
                         <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Role</h4>
-                        <p class="text-olive    /70">UI/UX Designer</p>
+                        <p class="text-olive/70">UI/UX Designer</p>
                     </div>
                     <div>
                         <h4 class="font-bold text-olive uppercase text-sm tracking-wider mb-2">Tools</h4>
@@ -410,8 +721,8 @@
                 <div class="space-y-4 text-olive/80 leading-relaxed">
                     <h3 class="font-serif text-2xl text-olive">Key Contributions</h3>
                     <ul class="list-disc pl-5 space-y-2">
-                        <li>Mengembangkan wireframe dan prototipe interaktif untuk aplikasi mobile.</li <li>Mendesain
-                        antarmuka yang intuitif dengan fokus pada pengalaman pengguna.</li>
+                        <li>Mengembangkan wireframe dan prototipe interaktif untuk aplikasi mobile.</li>
+                        <li>Mendesain antarmuka yang intuitif dengan fokus pada pengalaman pengguna.</li>
                         <li>Melakukan pengujian kegunaan untuk mengidentifikasi area perbaikan.</li>
                         <li>Mengintegrasikan umpan balik pengguna untuk iterasi desain yang lebih baik.</li>
                     </ul>
@@ -419,10 +730,7 @@
             </div>
         </div>
 
-
-
-
-        <!-- 5. MARKETPLACE DETAIL -->
+        <!-- 6. MARKETPLACE DETAIL -->
         <div id="view-project-marketplace" class="page-view hidden-view">
             <div class="max-w-4xl mx-auto px-6 pb-24">
                 <a href="#home"
@@ -478,7 +786,6 @@
                                 class="w-full h-full object-cover rounded-full">
                         </div>
 
-                        <!-- UPDATE: Download Resume Button with Alert Logic -->
                         <div>
                             <a href="shella_cv.pdf" onclick="handleDownload(event)"
                                 class="flex w-full items-center justify-center gap-2 px-6 py-3 bg-olive text-white font-bold rounded-xl hover:bg-accent transition-all text-sm shadow-lg hover:shadow-xl">
@@ -512,7 +819,8 @@
                                 </div>
                                 <div>
                                     <span class="text-xs font-bold text-accent block mb-1">Data & Tools</span>
-                                    <p class="text-sm text-olive/70">Enterprise Architect, Figma, Git/GitHub, VS Code</p>
+                                    <p class="text-sm text-olive/70">Enterprise Architect, Figma, Git/GitHub, VS Code
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -564,8 +872,8 @@
                                         landing page, hingga aplikasi full-stack. Berperan dalam seluruh siklus
                                         pengembangan: riset, desain, development, testing, hingga deployment.
                                         Berpengalaman menggunakan Laravel, Python, JavaScript, serta framework UI
-                                        modern. dan sekarang sedang belajar membuat aplikasi mobile menggunakan frame
-                                        work Flutter.
+                                        modern. dan sekarang sedang belajar membuat aplikasi mobile menggunakan
+                                        framework Flutter.
                                     </p>
                                 </div>
 
@@ -573,7 +881,7 @@
                                     <div class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-olive/20"></div>
                                     <h4 class="font-bold text-olive text-lg">UI/UX Designer – Academic & Freelance</h4>
                                     <p class="text-xs text-olive/50 mb-2 font-mono">2024 – Sekarang</p>
-                                    <p class="text-sm text-olive/70 leading-relaxed  text-justify">
+                                    <p class="text-sm text-olive/70 leading-relaxed text-justify">
                                         Mendesain pengalaman pengguna dan antarmuka aplikasi berbasis mobile dan
                                         website. Menghasilkan wireframe, user flow, dan high-fidelity design menggunakan
                                         pendekatan problem-solving.
@@ -591,8 +899,8 @@
     <!-- Footer -->
     <footer id="contact" class="bg-olive text-cream pt-24 pb-12 rounded-t-[3rem] -mt-12 relative z-10">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-6xl font-serif mb-6">Let’s Work Together.</h2>
-            <p class="text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed  text-justify">
+            <h2 class="text-4xl md:text-6xl font-serif mb-6">Let's Work Together.</h2>
+            <p class="text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed text-justify">
                 Saya terbuka untuk peluang kerja, kolaborasi proyek, magang, maupun permintaan kerja sama lainnya. Jika
                 Anda membutuhkan developer yang disiplin, cepat belajar, serta mampu mengerjakan proyek secara
                 end-to-end, saya siap membantu.
@@ -606,12 +914,10 @@
                     class="px-8 py-4 border border-white/20 rounded-full hover:bg-white/10 transition-colors">
                     LinkedIn Profile
                 </a>
-                <!-- GitHub 1 (Main/Personal) -->
                 <a href="https://github.com/shellamita" target="_blank"
                     class="px-8 py-4 border border-white/20 rounded-full hover:bg-white/10 transition-colors">
                     GitHub (Personal)
                 </a>
-                <!-- GitHub 2 (Academic/Commits) -->
                 <a href="https://github.com/shellamitasi23-commits" target="_blank"
                     class="px-8 py-4 border border-white/20 rounded-full hover:bg-white/10 transition-colors">
                     GitHub (Academic)
@@ -625,7 +931,107 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    menu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Simple Router untuk navigasi antar halaman
+        function navigate(viewId) {
+            document.querySelectorAll('.page-view').forEach(view => {
+                view.classList.remove('page-view');
+                view.classList.add('hidden-view');
+            });
+
+            const targetView = document.getElementById(viewId);
+            if (targetView) {
+                targetView.classList.remove('hidden-view');
+                targetView.classList.add('page-view');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            lucide.createIcons();
+        }
+
+        // Handle hash navigation
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash.startsWith('project-')) {
+                navigate(`view-${hash}`);
+            } else if (hash === 'resume') {
+                navigate('view-resume');
+            } else if (hash === 'home' || hash === '') {
+                navigate('view-home');
+            }
+        });
+
+        // Handle initial load
+        const initialHash = window.location.hash.substring(1);
+        if (initialHash && initialHash !== 'home' && initialHash !== 'projects' && initialHash !== 'contact') {
+            if (initialHash.startsWith('project-')) {
+                navigate(`view-${initialHash}`);
+            } else if (initialHash === 'resume') {
+                navigate('view-resume');
+            }
+        }
+
+        // Smooth scroll untuk anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+
+                if (href.startsWith('#project-') || href === '#resume') {
+                    e.preventDefault();
+                    window.location.hash = href.substring(1);
+                } else if (href === '#home') {
+                    e.preventDefault();
+                    navigate('view-home');
+                    window.location.hash = '';
+                }
+            });
+        });
+
+        // Download CV Handler with alert
+        function handleDownload(event) {
+            event.preventDefault();
+            alert('Terima kasih atas minat Anda! CV akan segera diunduh.');
+            // Uncomment baris di bawah jika file CV sudah tersedia
+            // window.location.href = 'shella_cv.pdf';
+        }
+
+        // Reveal animations on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+    </script>
 </body>
 
 </html>
